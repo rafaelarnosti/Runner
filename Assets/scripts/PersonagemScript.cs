@@ -34,7 +34,7 @@ public class PersonagemScript : MonoBehaviour {
 
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 
-			if (Physics.Raycast (ray, out hit) ) {
+			if (Physics.Raycast (ray, out hit) && (hit.collider.gameObject.tag != "Player") ) {
 				novaPosicao = hit.point;
 				//transform.position = novaPosicao;
 				transform.position = Vector3.MoveTowards (transform.position, novaPosicao, velocidade * Time.deltaTime);
